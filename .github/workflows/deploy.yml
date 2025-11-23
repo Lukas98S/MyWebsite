@@ -9,6 +9,11 @@ jobs:
   deploy-to-github-pages:
     # Führt den Job auf dem neuesten Ubuntu-Runner aus
     runs-on: ubuntu-latest
+
+    # HINZUGEFÜGT: Berechtigungen für den Job festlegen
+    permissions:
+      contents: write # Erforderlich, um den gh-pages Branch zu erstellen/aktualisieren
+
     steps:
       # 1. Code auschecken
       - uses: actions/checkout@v4
